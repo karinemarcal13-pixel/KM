@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Agenda Online</title>
+	<link rel="stylesheet" href="styles.css">
+	<meta name="description" content="Agenda com confirmação automática via WhatsApp e pagamento por Pix">
+</head>
+<body>
+	<main class="container">
+		<h1>KM SCHEDULE</h1>
+		<p class="subtitle">Mensalidade: <strong>R$20,00 / mês</strong> — Pix: <strong>12204316997</strong></p>
+
+		<form id="bookingForm" class="card">
+			<label>Nome completo
+				<input type="text" id="name" required placeholder="Nome do cliente">
+			</label>
+
+			<label>Telefone (WhatsApp)
+				<input type="tel" id="phone" required placeholder="55DDD9XXXXXXXX">
+			</label>
+
+			<div class="row">
+				<label>Data
+					<input type="date" id="date" required>
+				</label>
+				<label>Hora
+					<input type="time" id="time" required>
+				</label>
+			</div>
+
+			<label>Procedimento / Observações
+				<textarea id="procedure" placeholder="Descreva o procedimento"></textarea>
+			</label>
+
+			<label>Forma de pagamento
+				<select id="paymentMethod">
+					<option value="pix">Pix</option>
+					<option value="cartao">Cartão</option>
+					<option value="dinheiro">Dinheiro</option>
+				</select>
+			</label>
+
+			<div class="actions">
+				<button type="submit" id="submitBtn">Agendar e Confirmar via WhatsApp</button>
+			</div>
+		</form>
+
+		<section class="card info">
+			<h2>Instruções de Pagamento</h2>
+			<p>Mensalidade: <strong>R$20,00</strong></p>
+			<p>Pix (chave): <strong id="pixKey">12204316997</strong></p>
+			<p>Envie o comprovante por WhatsApp após efetuar o pagamento.</p>
+			<div class="pix-actions">
+				<button id="generatePixQr">Gerar QR Pix (R$20,00)</button>
+				<button id="downloadPixQr" style="display:none">Baixar QR (PNG)</button>
+				<div id="pixQr" class="pix-qr"></div>
+				<p class="muted">Nome do recebedor: <strong id="pixReceiver">KM SCHEDULE</strong> — Cidade: <strong id="pixCity">PARANÁ</strong></p>
+			</div>
+		</section>
+
+		<section class="card">
+			<h2>Meus Agendamentos</h2>
+			<ul id="appointmentsList" class="appointments"></ul>
+		</section>
+
+		<footer class="card footer">
+			<p>Suporte via e-mail: <a href="mailto:karinemarcal13@gmail.com">karinemarcal13@gmail.com</a></p>
+		</footer>
+	</main>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
+
+
