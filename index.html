@@ -1,79 +1,110 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Agenda Online</title>
-	<link rel="stylesheet" href="styles.css">
-	<meta name="description" content="Agenda com confirmação automática via WhatsApp e pagamento por Pix">
+  <meta charset="UTF-8">
+  <title>Alves Adesivos</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<main class="container">
-		<h1>KM SCHEDULE</h1>
-		<p class="subtitle">Mensalidade: <strong>R$20,00 / mês</strong> — Pix: <strong>12204316997</strong></p>
 
-		<form id="bookingForm" class="card">
-			<label>Nome completo
-				<input type="text" id="name" required placeholder="Nome do cliente">
-			</label>
+<!-- MENU -->
+<nav class="menu">
+  <h2>Alves Adesivos</h2>
+  <div>
+    <a href="#sobre">Sobre</a>
+    <a href="#antes">Resultados</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
 
-			<label>Telefone (WhatsApp)
-				<input type="tel" id="phone" required placeholder="55DDD9XXXXXXXX">
-			</label>
+<!-- HERO -->
+<header>
+  <div class="overlay">
+    <h1>Transforme seu ambiente sem reforma</h1>
+    <p>Sem sujeira • Sem quebra • Resultado profissional</p>
 
-			<div class="row">
-				<label>Data
-					<input type="date" id="date" required>
-				</label>
-				<label>Hora
-					<input type="time" id="time" required>
-				</label>
-			</div>
+    <p class="local">📍 Londrina e região</p>
 
-			<label>Procedimento / Observações
-				<textarea id="procedure" placeholder="Descreva o procedimento"></textarea>
-			</label>
+    <a href="#contato" class="btn">Solicitar orçamento</a>
+  </div>
+</header>
 
-			<label>Forma de pagamento
-				<select id="paymentMethod">
-					<option value="pix">Pix</option>
-					<option value="cartao">Cartão</option>
-					<option value="dinheiro">Dinheiro</option>
-				</select>
-			</label>
+<!-- NÚMEROS -->
+<section class="numeros">
+  <div class="cards">
+    <div class="card"><h2>+200</h2><p>Projetos feitos</p></div>
+    <div class="card"><h2>100%</h2><p>Clientes satisfeitos</p></div>
+    <div class="card"><h2>1 dia</h2><p>Transformação rápida</p></div>
+  </div>
+</section>
 
-			<div class="actions">
-				<button type="submit" id="submitBtn">Agendar e Confirmar via WhatsApp</button>
-			</div>
-		</form>
+<!-- SOBRE -->
+<section id="sobre">
+  <h2>Renove sem gastar com reforma</h2>
+  <p>
+    Trabalhamos com adesivos premium resistentes à água e calor.
+    Ideal para cozinha, banheiro e móveis.
+  </p>
+</section>
 
-		<section class="card info">
-			<h2>Instruções de Pagamento</h2>
-			<p>Mensalidade: <strong>R$20,00</strong></p>
-			<p>Pix (chave): <strong id="pixKey">12204316997</strong></p>
-			<p>Envie o comprovante por WhatsApp após efetuar o pagamento.</p>
-			<div class="pix-actions">
-				<button id="generatePixQr">Gerar QR Pix (R$20,00)</button>
-				<button id="downloadPixQr" style="display:none">Baixar QR (PNG)</button>
-				<div id="pixQr" class="pix-qr"></div>
-				<p class="muted">Nome do recebedor: <strong id="pixReceiver">KM SCHEDULE</strong> — Cidade: <strong id="pixCity">PARANÁ</strong></p>
-			</div>
-		</section>
+<!-- ANTES/DEPOIS -->
+<section id="antes">
+  <h2>Antes e Depois</h2>
+  <p>Veja resultados reais no nosso Instagram</p>
 
-		<section class="card">
-			<h2>Meus Agendamentos</h2>
-			<ul id="appointmentsList" class="appointments"></ul>
-		</section>
+  <a href="https://www.instagram.com/alves.adesivos/" target="_blank" class="btn">
+    Ver transformações
+  </a>
+</section>
 
-		<footer class="card footer">
-			<p>Suporte via e-mail: <a href="mailto:karinemarcal13@gmail.com">karinemarcal13@gmail.com</a></p>
-		</footer>
-	</main>
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
+  <h2>Clientes satisfeitos</h2>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-	<script src="script.js"></script>
+  <div class="cards">
+    <div class="card">
+      <p>"Ficou perfeito, parece outro móvel!"</p>
+      ⭐⭐⭐⭐⭐
+    </div>
+
+    <div class="card">
+      <p>"Muito rápido e sem bagunça"</p>
+      ⭐⭐⭐⭐⭐
+    </div>
+
+    <div class="card">
+      <p>"Melhor investimento que fiz na casa"</p>
+      ⭐⭐⭐⭐⭐
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <h2>Solicite seu orçamento</h2>
+
+  <form onsubmit="enviarWhats(event)">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="text" id="servico" placeholder="O que deseja transformar?" required>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<!-- BOTÃO FLUTUANTE -->
+<a href="https://wa.me/5543984046323" class="zap-fixo">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<footer>
+  © 2026 Alves Adesivos
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
-
-
