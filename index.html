@@ -1,110 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Alves Adesivos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alves Adesivos</title>
 
-  <link rel="stylesheet" href="style.css">
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0f172a;
+  color: white;
+}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+/* HEADER */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+header h1 {
+  font-size: 36px;
+}
+
+header p {
+  color: #cbd5e1;
+  margin: 15px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* GALERIA */
+.galeria img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* BOTÃO WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: #020617;
+  padding: 20px;
+  text-align: center;
+  color: #94a3b8;
+}
+</style>
 </head>
+
 <body>
 
-<!-- MENU -->
-<nav class="menu">
-  <h2>Alves Adesivos</h2>
-  <div>
-    <a href="#sobre">Sobre</a>
-    <a href="#antes">Resultados</a>
-    <a href="#contato">Contato</a>
-  </div>
-</nav>
-
-<!-- HERO -->
 <header>
-  <div class="overlay">
-    <h1>Transforme seu ambiente sem reforma</h1>
-    <p>Sem sujeira • Sem quebra • Resultado profissional</p>
+  <h1>Transforme sua casa sem reforma</h1>
+  <p>Adesivos para móveis, cozinha e ambientes — rápido, limpo e econômico</p>
 
-    <p class="local">📍 Londrina e região</p>
-
-    <a href="#contato" class="btn">Solicitar orçamento</a>
-  </div>
+  <a class="btn" href="#" onclick="enviarWhats()">
+    Fazer Orçamento Agora
+  </a>
 </header>
 
-<!-- NÚMEROS -->
-<section class="numeros">
+<section>
+  <h2>✨ Serviços</h2>
   <div class="cards">
-    <div class="card"><h2>+200</h2><p>Projetos feitos</p></div>
-    <div class="card"><h2>100%</h2><p>Clientes satisfeitos</p></div>
-    <div class="card"><h2>1 dia</h2><p>Transformação rápida</p></div>
+    <div class="card">Envelopamento de móveis</div>
+    <div class="card">Geladeiras e armários</div>
+    <div class="card">Portas e paredes</div>
+    <div class="card">Cozinhas completas</div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section id="sobre">
-  <h2>Renove sem gastar com reforma</h2>
-  <p>
-    Trabalhamos com adesivos premium resistentes à água e calor.
-    Ideal para cozinha, banheiro e móveis.
-  </p>
+<section>
+  <h2>🔥 Vantagens</h2>
+  <div class="cards">
+    <div class="card">✔ Sem sujeira</div>
+    <div class="card">✔ Aplicação rápida</div>
+    <div class="card">✔ Muito mais barato</div>
+    <div class="card">✔ Resultado imediato</div>
+  </div>
 </section>
 
-<!-- ANTES/DEPOIS -->
-<section id="antes">
-  <h2>Antes e Depois</h2>
-  <p>Veja resultados reais no nosso Instagram</p>
+<section>
+  <h2>📸 Antes e Depois</h2>
+  <div class="galeria">
+    <a href="https://www.instagram.com/alves.adesivos/" target="_blank">
+      <img src="https://via.placeholder.com/400x300" alt="Antes e depois">
+    </a>
+  </div>
+</section>
 
-  <a href="https://www.instagram.com/alves.adesivos/" target="_blank" class="btn">
-    Ver transformações
+<section>
+  <h2>🚀 Veja mais resultados</h2>
+  <a class="btn" href="https://www.instagram.com/alves.adesivos/" target="_blank">
+    Ver Instagram
   </a>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="depoimentos">
-  <h2>Clientes satisfeitos</h2>
-
-  <div class="cards">
-    <div class="card">
-      <p>"Ficou perfeito, parece outro móvel!"</p>
-      ⭐⭐⭐⭐⭐
-    </div>
-
-    <div class="card">
-      <p>"Muito rápido e sem bagunça"</p>
-      ⭐⭐⭐⭐⭐
-    </div>
-
-    <div class="card">
-      <p>"Melhor investimento que fiz na casa"</p>
-      ⭐⭐⭐⭐⭐
-    </div>
-  </div>
-</section>
-
-<!-- CONTATO -->
-<section id="contato">
-  <h2>Solicite seu orçamento</h2>
-
-  <form onsubmit="enviarWhats(event)">
-    <input type="text" id="nome" placeholder="Seu nome" required>
-    <input type="text" id="servico" placeholder="O que deseja transformar?" required>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-
-<!-- BOTÃO FLUTUANTE -->
-<a href="https://wa.me/5543984046323" class="zap-fixo">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
 <footer>
-  © 2026 Alves Adesivos
+  Atendimento em Londrina e região
 </footer>
 
-<script src="script.js"></script>
+<!-- BOTÃO WHATS -->
+<a href="#" class="whatsapp">💬</a>
+
+<!-- JAVASCRIPT -->
+<script>
+// SEU NÚMERO AQUI
+const numeroWhats = "5543984046323";
+
+// FUNÇÃO WHATS
+function enviarWhats(tipo = "") {
+  let mensagem = "Olá, vim pelo site e quero um orçamento";
+
+  if (tipo === "cozinha") {
+    mensagem = "Olá, quero reformar minha cozinha com adesivo";
+  } 
+  else if (tipo === "geladeira") {
+    mensagem = "Olá, quero envelopar minha geladeira";
+  } 
+  else if (tipo === "moveis") {
+    mensagem = "Olá, quero renovar meus móveis";
+  }
+
+  const link = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
+  window.open(link, "_blank");
+}
+
+// BOTÃO FLUTUANTE
+document.querySelector(".whatsapp").addEventListener("click", function(e) {
+  e.preventDefault();
+  enviarWhats();
+});
+
+// CLICK NOS CARDS
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("click", () => {
+    const texto = card.innerText.toLowerCase();
+
+    if (texto.includes("cozinha")) enviarWhats("cozinha");
+    else if (texto.includes("geladeira")) enviarWhats("geladeira");
+    else enviarWhats("moveis");
+  });
+});
+</script>
 
 </body>
 </html>
